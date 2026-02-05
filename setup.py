@@ -1,12 +1,8 @@
 from setuptools import setup, find_packages
 
-
-setup(name='ClusterContrast',
+setup(name='PBE',
       version='1.0.0',
-      description='Cluster Contrast for Unsupervised Person Re-Identification',
-      author='GuangYuan wang',
-      author_email='yixuan.wgy@alibaba-inc.com',
-      # url='',
+      description='Part-based Bi-directional Enhancement Learning for Unsupervised Visible-Infrared Re-identification',
       install_requires=[
           'numpy', 'torch', 'torchvision',
           'six', 'h5py', 'Pillow', 'scipy',

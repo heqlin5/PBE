@@ -1,25 +1,26 @@
 ![Python >=3.5](https://img.shields.io/badge/Python->=3.6-blue.svg)
 ![PyTorch >=1.6](https://img.shields.io/badge/PyTorch->=1.6-yellow.svg)
 
-# Towards Grand Unified Representation Learning for Unsupervised Visible-Infrared Person Re-Identification
+# 🚀 Part-Based Bi-Directional Enhancement Learning for Unsupervised Visible-Infrared Re-Identification
 
-The *official* repository for [Towards Grand Unified Representation Learning for Unsupervised Visible-Infrared Person Re-Identification](https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_Towards_Grand_Unified_Representation_Learning_for_Unsupervised_Visible-Infrared_Person_Re-Identification_ICCV_2023_paper.pdf). We achieve state-of-the-art performances on **unsupervised visible-infrared person re-identification** task.
+The *official* repository for [Part-Based Bi-Directional Enhancement Learning for Unsupervised Visible-Infrared Re-Identification](https://ieeexplore.ieee.org/abstract/document/11230802). We achieve state-of-the-art performances on **unsupervised visible-infrared person re-identification** task.
 
-**Our unified framework**
-![framework](figs/frameworkv2.png)
+# **🧠 Our unified framework**
+![framework](figs/framework.png)
 
-# Highlight
+# ✨ Highlight
 
-1. We propose a novel unsupervised learning framework that adopts a bottom-up domain learning strategy with cross-memory association embedding. This enables the model to learn unified representation which is robust against hierarchical discrepancy.
-2. We design a cross-modality label unification module to propagate and smooth labels between two modalities with heterogeneous affinity matrix and homogeneous structure matrix, respectively, unifying the identities across the two modalities.
-3. Extensive experiments on the SYSU-MM01 and RegDB datasets demonstrate that our GUR framework significantly outperforms existing USL-VI-ReID methods, and even surpasses some supervised counterparts, further narrowing the gap between supervised and unsupervised VI-ReID. 
+1. We propose a novel Part-based Bidirectional Enhancement (PBE) framework for the unsupervised learning visible-infrared person re-identification task including two main components: a Part-based Label Forward Enhancement (PLFE) module to alleviate the cross-modality label association problem and a Part-based Feature Backward Enhancement (PFBE) module to mitigate the cross-modality feature discrepancy problem.
+2. We design a Part-based Label Forward Enhancement (PLFE) module to generate high-quality VI-associated pseudo-labels by employing part features to complement global features during the label association process.
+3. We present a Part-based Feature Backward Enhancement (PFBE) module to learn more robust uniform features by utilizing part features to augment global features for contrastive loss during the feature learning process. 
+4. Extensive experimental results show the advanced performance of the PBE method, demonstrating the effectiveness of our proposed approach.
 
-# Prepare Datasets
-Put SYSU-MM01 and RegDB dataset into data/sysu and data/regdb, run prepare\_sysu.py and prepare\_regdb.py to prepare the training data (convert to market1501 format).
+# 📂 Prepare Datasets
+Put SYSU-MM01 and RegDB dataset into `data/sysu` and `data/regdb`, run `prepare_sysu.py` and `prepare_regdb.py` to prepare the training data (convert to market1501 format).
 
-# Training
+# 🔥 Training
 
-We utilize 4 V100 GPUs for training.
+We utilize 4 NVIDIA 3090 GPUs for training.
 
 **examples:**
 
@@ -51,29 +52,20 @@ sh sba_test_regdb.sh
 
 
 # Citation
-This code is based on previous work [ADCA](https://github.com/yangbincv/ADCA.). 
+This code is based on previous works, including [GUR](https://github.com/yangbincv/GUR) and [ADCA](https://github.com/yangbincv/ADCA). 🙏 
 If you find this code useful for your research, please cite our papers.
 
 ```
-@InProceedings{Yang_2023_ICCV,
-    author    = {Yang, Bin and Chen, Jun and Ye, Mang},
-    title     = {Towards Grand Unified Representation Learning for Unsupervised Visible-Infrared Person Re-Identification},
-    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-    month     = {October},
-    year      = {2023},
-    pages     = {11069-11079}
-}
-
-@inproceedings{adca,
-  title={Augmented Dual-Contrastive Aggregation Learning for Unsupervised Visible-Infrared Person Re-Identification},
-  author={Yang, Bin and Ye, Mang and Chen, Jun and Wu, Zesen},
-  pages = {2843–2851},
-  booktitle = {ACM MM},
-  year={2022}
-}
+@ARTICLE{He_2025_TIFS,
+  author={He, Qiaolin and Yang, Yiming and Wang, Zihan and Hu, Haifeng},
+  journal={IEEE Transactions on Information Forensics and Security}, 
+  title={Part-Based Bi-Directional Enhancement Learning for Unsupervised Visible-Infrared Re-Identification}, 
+  year={2025},
+  volume={20},
+  number={},
+  pages={12051-12065},
+  keywords={Representation learning;Feature extraction;Training;Bidirectional control;Unsupervised learning;Manuals;Identification of persons;Noise;Annotations;Reliability;Visible-infrared person re-identification;unsupervised learning;part feature},
+  doi={10.1109/TIFS.2025.3629565}}
 ```
-
-# Contact
-yangbin_cv@whu.edu.cn; yemang@whu.edu.cn.
 
 
